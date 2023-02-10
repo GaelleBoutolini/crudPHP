@@ -11,7 +11,7 @@
     <div class="form">
         <a href="index.php" class="back_btn"><img src="/images/back.png" alt="">Retour</a>
         <h2>Modifier un employé</h2>
-        <p class="erreur_message">Veuillez remplir tous les champs</p>
+        <p class="erreur_message">Veuillez remplir tous les champs !</p>
         <form action="" method="POST">
         <label>Nom</label>
         <input type="text" name="nom">

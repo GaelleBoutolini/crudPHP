@@ -26,6 +26,7 @@
         // J'inclue la page de connexion
         include_once "connexion.php";
         ?>
+        
         <!-- //requête pour afficher la liste des employés -->
             <?php
             $response = $bdd->query('SELECT * FROM employe');
@@ -35,12 +36,15 @@
                     <td><?= $donnees['prenom'] ?></td>
                     <td><?= $donnees['age'] ?></td>
              <!-- //Ici, je met l'id de chaque employé dans ce lien -->
-             <td><a href="modifier.php?id<?=$donnees['id']?> "><img src="/images/pen.png" alt=""></a></td>
-             <td><a href="supprimer.php?id<?=$donnees['id']?> "><img src="/images/trash.png" alt=""></a></td>
+             <td><a href="modifier.php?id=<?=$donnees['id']?> "><img src="/images/pen.png" alt=""></a></td>
+             <td><a href="supprimer.php?id=<?=$donnees['id']?> "><img src="/images/trash.png" alt=""></a></td>
                     </tr>
             <?php
             }
             ?>
+
+ 
+                
 
         </table>
     </div>
