@@ -9,39 +9,42 @@
 </head>
 <body>
     <?php
-    //vérifier que le bouton ajouter a bien été cliqué
-    if(isset($_POST['bouton'])){
-        //extraction des informations envoyées dans des variables par la méthode POST
-        extract($_POST);
-        //verifier que tous les champs ont été remplis
-        if(isset($nom) && isset($prenom) && isset($age)){
-             //connexion à la base de données
-                include_once "connexion.php";
-                //requete d'ajout
-                $response = $bdd->query("INSERT INTO employe  VALUES(NULL, '$nom', '$prenom', '$age')");
-                if($response){//si la requete a été effectuée avec succès, on fait uneredirection
-                header("location: index.php");
-                }else{// sinon
-                    $message = "Employé non ajouté";
-                }
-                }else{//sinon
-            $message = "Veuillez remplir tous les champs !";
-        }
-        
-    }    
-    
-   
+    //vérifier que le bouton ajouter a bien été cliquer
+    if(isset($_POST['button'])){
+       //extraction des informations envoyés dans des variables par la méthode POST
+       extract($_POST);
+       //vérifier que tous les champs pnt été remplis
+       if(isset($nom) && isset($prenom) && isset($age)){
+        //connexion à la base de données
+        include_once "connexion.php";
+        //requête d'ajout
+        $sql = $bdd->query("INSERT INTO employe (nom, prenom, age)
+        VALUES ('$nom', '$prenom', '$age')");
+         
+         if($sql){//si la requete a été effectuée avec succèes, on fait une redirection
+            header("location: index.php"); 
+         }else{//sinon 
+            $message ="Employé non ajouté";
+         }
+
+       }else{
+        //sinon
+        $message = "Veuillez remplir tous les champs !";
+
+       }
+    }
+     
     ?>
     <div class="form">
         <a href="index.php" class="back_btn"><img src="/images/back.png" alt="">Retour</a>
         <h2>Ajouter un employé</h2>
         <p class="erreur_message">
-          <?php
-    //si la variable message existe, affichons son contenu
-    if(isset($message)){
-        echo $message;
-    }
-          ?>
+         <?php
+         //si la variable message existe, affichons son contenu
+         if(isset($message)){
+            echo $message;
+         }
+         ?>
             </p>
         <form action="" method="POST">
         <label>Nom</label>

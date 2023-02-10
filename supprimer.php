@@ -7,8 +7,6 @@ $id = $_GET['id'];
 $response = $bdd->query("DELETE FROM employe WHERE id = $id");
 //redirection vers la page index.php
 header("location:index.php");
-
-
 ?>
 
 
