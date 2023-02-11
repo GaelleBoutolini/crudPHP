@@ -31,6 +31,10 @@
             <?php
             $response = $bdd->query('SELECT * FROM employe');
             while ($donnees = $response->fetch()) { ?>
+<!-- 
+Ligne 1: la variable $response stocke le résultat de la requête SQL exécutée sur la base de données. La requête est de type SELECT qui sélectionne toutes les colonnes (*) de la table employe. La méthode query est appelée sur l'objet de connexion à la base de données $bdd.
+
+Ligne 2: la structure de boucle while est utilisée pour parcourir tous les enregistrements du jeu de résultats retourné par la requête. La méthode fetch est appelée à chaque itération pour récupérer le prochain enregistrement sous forme de tableau associatif, qui est stocké dans la variable $donnees. -->
                 <tr>
                     <td><?= $donnees['nom'] ?></td>
                     <td><?= $donnees['prenom'] ?></td>
