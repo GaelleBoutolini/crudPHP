@@ -8,6 +8,14 @@
     <title>BD-société</title>
 </head>
 <body>
+    <div>
+<nav>
+        <a href="#">Accueil</a>
+        <a href="#">A propos</a>
+        <a href="#">Contact</a>
+    </nav>
+    </div>
+  
     <div class="container">
       
         <table>
@@ -48,5 +56,8 @@ Ligne 2: la structure de boucle while est utilisée pour parcourir tous les enre
             ?>
         </table>
     </div>
+    <footer>
+        <p>Mes coordonnées</p>
+    </footer>
 </body>
 </html>
