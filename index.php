@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,32 +17,25 @@
     </div>
   
     <div class="container">
-      
-        <table>
-            <tr id="items">
-                
-    
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Age</th>
-                <th>Modifier</th>
-                <th>Supprimer</th>
-            </tr>
+    <a href="ajouter.php" class="Btn_add"><img src="/images/img.png" alt="">Ajouter</a>
+    </a>
+    <table>
+        <tr id="items">
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Age</th>
+            <th>Modifier</th>
+            <th>Supprimer</th>
+        </tr>
             
-            <a href="ajouter.php" class="Btn_add"><img src="/images/img.png" alt="">Ajouter</a>
         <?php
         // J'inclue la page de connexion
         include_once "connexion.php";
         ?>
-        
-        <!-- //requête pour afficher la liste des employés -->
             <?php
-            $response = $bdd->query('SELECT * FROM employe');
+            $response = $bdd->query('SELECT * FROM employes');
             while ($donnees = $response->fetch()) { ?>
-<!-- 
-Ligne 1: la variable $response stocke le résultat de la requête SQL exécutée sur la base de données. La requête est de type SELECT qui sélectionne toutes les colonnes (*) de la table employe. La méthode query est appelée sur l'objet de connexion à la base de données $bdd.
 
-Ligne 2: la structure de boucle while est utilisée pour parcourir tous les enregistrements du jeu de résultats retourné par la requête. La méthode fetch est appelée à chaque itération pour récupérer le prochain enregistrement sous forme de tableau associatif, qui est stocké dans la variable $donnees. -->
                 <tr>
                     <td><?= $donnees['nom'] ?></td>
                     <td><?= $donnees['prenom'] ?></td>

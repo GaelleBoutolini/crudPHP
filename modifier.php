@@ -9,41 +9,24 @@
 </head>
 <body>
 <?php
-
-//connexion à la base de données
 include_once "connexion.php";
-//on récupère de id dans le lien
 $id = $_GET['id'];
-//requête pour afficher les infos d'un employé
-$response = $bdd->query('SELECT * FROM employe');
+$response = $bdd->query('SELECT * FROM employes');
 $donnees = $response->fetch();
-
-// Cette ligne elle effectue une assignation de valeur à une variable appelée $donnees. La valeur qui est assignée à $donnees provient d'un objet $response qui semble être un objet PDOStatement ou un objet similaire retourné par une requête SQL exécutée via le PHP Data Object (PDO) ou un autre moyen de communication avec une base de données. La méthode fetch() est appelée sur l'objet $response, ce qui renvoie une ligne de résultat de la requête SQL sous forme d'un tableau associatif. Ce tableau associatif est assigné à la variable $donnees.
-
-
-
-    //vérifier que le bouton ajouter a bien été cliquer
     if(isset($_POST['button'])){
-       //extraction des informations envoyés dans des variables par la méthode POST
        extract($_POST);
-       //vérifier que tous les champs pnt été remplis
        if(isset($nom) && isset($prenom) && isset($age)){
-        
-        $sql = $bdd->query("UPDATE employe SET nom = '$nom', prenom = '$prenom', age = '$age' WHERE id = $id");
-         
-         if($sql){//si la requete a été effectuée avec succèes, on fait une redirection
+        $sql = $bdd->query("UPDATE employes SET nom = '$nom', prenom = '$prenom', age = '$age' WHERE id = $id");
+         if($sql){
             header("location: index.php"); 
          }else{//sinon 
             $message ="Employé non modifié";
          }
-
        }else{
         //sinon
         $message = "Veuillez remplir tous les champs !";
-
        }
     }
-     
     ?>
     <div class="form">
         <a href="index.php" class="back_btn"><img src="/images/back.png" alt="">Retour</a>
@@ -53,7 +36,6 @@ $donnees = $response->fetch();
                 if(isset($message)){
                     echo $message;
                 }
-
             ?>
         </p>
         <form action="" method="POST">

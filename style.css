@@ -7,60 +7,69 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
 nav {
     background-color: #333;
     color: #fff;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
     padding: 10px;
-    margin-bottom: 750px;
-    width: 580%;
-   
+    z-index: 999; 
 }
+
 /* Style pour les liens de la navbar */
 nav a {
     color: #fff;
     text-decoration: none;
     margin: 0 10px;
 }
-
-body{
-    display:flex;
+body {
+    display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 100vh;
-    position: relative;
-    background-color: #999;
-    
+    background-color: #ffffff;
+    height: 100vh; 
+    margin: 0; 
 }
-.container{
-    margin: -300px auto;
+
+
+.container {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
-.Btn_add{
-    width:fit-content;
-    margin-top: 600px;
+
+.Btn_add {
+    width: fit-content;
+    margin-top: 20px;
     background-color: rgb(6, 130, 115);
     padding: 5px 20px;
     color: #fff;
     display: flex;
     align-items: center;
-    text-align: 0;
+    text-align: center;
     border-radius: 6px;
     text-decoration: none;
 }
-.Btn_add img{
+
+.Btn_add img {
     margin-right: 15px;
     height: 20px;
     color: #fff;
 }
 
-/***Tableau*/
-table{
+table {
     border-color: collapse;
     color: #484848;
     margin-bottom: 70px;
- 
 }
 th{
     font-size: 16px;
@@ -78,7 +87,6 @@ img{
     height: 25px;
     background-color: #e0e0e0;
 }
-
 
 tr:nth-child(2n){
     background-color: #6ca8a8;
@@ -101,6 +109,7 @@ tr:nth-child(2n) td {
     display: flex;
     width: 350px;
     flex-direction: column;
+   
 }
 
 .back_btn{
@@ -160,6 +169,6 @@ footer {
     position:fixed;
     bottom: 0;
     width: 100%;
-    overflow: hidden;
+    padding: 0;
 }
 
