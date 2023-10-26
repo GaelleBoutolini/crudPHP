@@ -67,7 +67,7 @@ body {
 }
 
 table {
-    border-color: collapse;
+    border-color: red;
     color: #484848;
     margin-bottom: 70px;
 }
