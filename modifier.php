@@ -28,6 +28,8 @@ $donnees = $response->fetch();
        }
     }
     ?>
+
+    
     <div class="form">
         <a href="index.php" class="back_btn"><img src="/images/back.png" alt="">Retour</a>
         <h2>Modifier un employé: <?= $donnees['nom']?></h2>
@@ -42,7 +44,7 @@ $donnees = $response->fetch();
         <label>Nom</label>
         <input type="text" name="nom" value="<?= $donnees['nom'] ?>">
         <label>Prénom</label>
-        <input type="text" name="prenom" value="<?= $donnees['prenom'] ?>">
+        <input type="text" name="prenom" value="<?= $donnees['prenom']?>">
         <label>Age</label>
         <input type="number" name="age" value="<?= $donnees['age'] ?>">
         <input type="submit" value="Modifier" name="button">

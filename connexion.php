@@ -1,5 +1,5 @@
-<?php
 
+<?php
 try {
     $bdd = new PDO("mysql:host=localhost;dbname=societes; charset=utf8", "root", "");
     echo "";
@@ -9,3 +9,5 @@ try {
         die();
     }
 ?>
+
+
